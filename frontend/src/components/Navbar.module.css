@@ -1,152 +1,138 @@
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
-    background: black;
-    padding: 20px 10px;
-    box-sizing: border-box;
-    color: #ffffff;
-    z-index: 999;
-    transition: all 300ms ease-in-out;
-  }
-  
-  .navbar p {
-    width: 100%;
-    background: black;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    color: #ffffff;
-  }
-  
-  .navbar ul {
+    width: 98%;
+    background-color: transparent;
+    color: #fff;
     display: flex;
-    margin: 0 auto;
-    max-width: 1020px;
-    align-items: center;
+    padding: 1rem;
+    z-index: 999;
+    transition: background-color 300ms ease-in-out;
   }
   
-  .title {
-    margin-right: auto;
-    margin-left: 0;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 1.2em;
-    color: #ffffff;
-    text-align: center;
+  .navbar:not(.navbarAtTop) {
+    background-color: #623c3c; /* Change to the desired color */
   }
   
-  .logo {
-    width: 120px;
-    vertical-align: middle;
-    transition: transform 0.3s;
+  .navbarHidden {
+    transform: translateY(-100%);
   }
-  
-  .logo:hover {
-    transform: scale(1.1);
-  }
-  
-  .navbar a {
-    border: none;
-    background: none;
-    padding: 6px 12px;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 1em;
-    text-decoration: none;
-    transition: transform 0.3s;
-  }
-  
-  .navbar a:hover {
-    transform: scale(1.2);
-  }
-  
-  /* (PREVIOUS CODE THAT CAUSED THE WIDER NAVBAR)
-  .navbarContainer {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-  */
   
   .navbarContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1280px;
-    margin: 0 auto;
   }
   
-  .links {
-    justify-self: end;
+  .menuIconContainer {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
   }
   
-  .scroll-link {
-    border: none;
-    background: none;
-    padding: 6px 12px;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 1em;
-    text-decoration: none;
+  .logo {
+    width: 50px;
     transition: transform 0.3s;
   }
   
-  .links:hover .scroll-link:hover {
-    transform: scale(1.2);
+  .menuIcon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Hide the menu icon initially */
+    transition: transform 0.3s;
   }
   
-  .nav-btn {
-    padding: 5px;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    visibility: hidden;
-    opacity: 0;
-    font-size: 32px;
+  .menuIcon:hover {
+    transform: scale(1.5); /* Zoom in the icon slightly on hover */
   }
   
-  @media only screen and (max-width: 768px) {
-    .nav-btn {
-      visibility: visible;
-      opacity: 1;
+  .navMenu {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navItem {
+    margin-right: 2rem;
+  }
+  
+  .navItem:last-child {
+    margin-right: 50px;
+  }
+  
+  .navItem a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block; /* Change to "inline-block" */
+    transition: transform 0.3s; /* Add transition effect on hover */
+  }
+  
+  .navItem a:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Enlarge the logo on hover */
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    right: 4rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Media query for small screens (e.g., mobile) */
+  @media (max-width: 768px) {
+    .menuIcon {
+      display: block; /* Show the menu icon for small screens */
+      padding-right: 190%;
     }
   
-    .links {
+    .navMenu {
+      list-style: none;
       position: fixed;
       top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
-      display: flex;
+      height: 100%;
+      background-color: #535947;
+      color: white;
+      padding: 1rem;
+      display: none;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      gap: 1.5rem;
-      background-color: black;
-      transition: 0s;
-      transform: translateY(-100vh);
+      align-items: center;
+      z-index: 999;
     }
   
-    .responsiveNav {
-      transition: 1s;
-      transform: none;
+    .navMenu.active {
+      display: flex; /* Show the navigation menu when active */
     }
   
-    .iconClicked {
-      transition: 1s;
-      transform: translateY(-100vh);
+    .navMenu a {
+      text-decoration: none;
+      color: #fff;
+      display: inline-block;
+      transition: transform 0.3s;
+      margin-bottom: 1rem;
     }
   
-  
-    .nav-close-btn {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
+    .navMenu a:hover {
+      transform: scale(1.1);
     }
+  
+    .navItem {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  }
+  
+  .navMenuLink {
+    color: #fff; /* Set the link color to white in the dropdown menu */
   }
   
