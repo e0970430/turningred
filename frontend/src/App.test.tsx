@@ -1,6 +1,3 @@
-// src/App.test.tsx
-// Remove or use React in your test if needed
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
