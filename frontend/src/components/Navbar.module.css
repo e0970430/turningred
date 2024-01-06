@@ -1,0 +1,152 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    color: #ffffff;
+    z-index: 999;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .navbar p {
+    width: 100%;
+    background: black;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: #ffffff;
+  }
+  
+  .navbar ul {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1020px;
+    align-items: center;
+  }
+  
+  .title {
+    margin-right: auto;
+    margin-left: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 120px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .navbar a {
+    border: none;
+    background: none;
+    padding: 6px 12px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    transition: transform 0.3s;
+  }
+  
+  .navbar a:hover {
+    transform: scale(1.2);
+  }
+  
+  /* (PREVIOUS CODE THAT CAUSED THE WIDER NAVBAR)
+  .navbarContainer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  */
+  
+  .navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .links {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+  }
+  
+  .scroll-link {
+    border: none;
+    background: none;
+    padding: 6px 12px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    transition: transform 0.3s;
+  }
+  
+  .links:hover .scroll-link:hover {
+    transform: scale(1.2);
+  }
+  
+  .nav-btn {
+    padding: 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 32px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .nav-btn {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    .links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      background-color: black;
+      transition: 0s;
+      transform: translateY(-100vh);
+    }
+  
+    .responsiveNav {
+      transition: 1s;
+      transform: none;
+    }
+  
+    .iconClicked {
+      transition: 1s;
+      transform: translateY(-100vh);
+    }
+  
+  
+    .nav-close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
+  }
+  
