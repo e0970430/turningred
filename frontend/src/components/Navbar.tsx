@@ -49,8 +49,8 @@ export default function Navbar() {
         isNavbarVisible ? "" : styles.navbarHidden
       } ${styles.navbarContainer}`}
       style={{
-        backgroundColor: navbarAtTop ? "transparent" : "#535947",
-        color: navbarAtTop ? "#3b5323" : "#fff",
+        backgroundColor: navbarAtTop ? "transparent" : "#fff",
+        color: navbarAtTop ? "#7b3636" : "#fff",
       }}
     >
 
@@ -73,7 +73,7 @@ export default function Navbar() {
               className={isNavbarOpen ? styles.navMenuLink : ""}
               style={{
                 fontWeight: "bold",
-                color: isNavbarOpen ? "#fff" : navbarAtTop ? "#3b5323" : "#fff",
+                color: isNavbarOpen ? "#fff" : navbarAtTop ? "#7b3636" : "#fff",
               }}
             >
               Home
@@ -86,7 +86,7 @@ export default function Navbar() {
               className={isNavbarOpen ? styles.navMenuLink : ""}
               style={{
                 fontWeight: "bold",
-                color: isNavbarOpen ? "#fff" : navbarAtTop ? "#3b5323" : "#fff",
+                color: isNavbarOpen ? "#fff" : navbarAtTop ? "#7b3636" : "#fff",
               }}
             >
               Login
