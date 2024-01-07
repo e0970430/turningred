@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo from "./logo.png";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -41,7 +42,7 @@ export default function Navbar() {
   const handleNavOptionClick = (targetId) => {
     smoothScrollTo(targetId);
     setIsNavbarOpen(false);
-  };
+  };  
 
   return (
     <nav
@@ -49,7 +50,7 @@ export default function Navbar() {
         isNavbarVisible ? "" : styles.navbarHidden
       } ${styles.navbarContainer}`}
       style={{
-        backgroundColor: navbarAtTop ? "transparent" : "#fff",
+        backgroundColor: navbarAtTop ? "transparent" : "#7b3636",
         color: navbarAtTop ? "#7b3636" : "#fff",
       }}
     >
@@ -58,38 +59,42 @@ export default function Navbar() {
         <div className={styles.menuIcon} onClick={toggleNavbar}>
           {isNavbarOpen ? <FaTimes /> : <FaBars />}
         </div>
+        <div>
+        <Link to="/">
+          <img src={logo} alt="Logo" className={styles.logo} style={{ width: '100px' }} />
+        </Link>
+      </div>
         <ul
           className={`${styles.navMenu} ${isNavbarOpen ? styles.active : ""}`}
         >
+
           {isNavbarOpen && (
             <div className={styles.closeButton} onClick={toggleNavbar}>
               <FaTimes />
             </div>
           )}
           <li className={styles.navItem}>
-            <Link
-              to="/"
-              onClick={() => handleNavOptionClick("home")}
-              className={isNavbarOpen ? styles.navMenuLink : ""}
-              style={{
+          <Link
+            to="/"
+            onClick={() => handleNavOptionClick("about")}
+            className={isNavbarOpen ? styles.navMenuLink : ""}
+            style={{
                 fontWeight: "bold",
                 color: isNavbarOpen ? "#fff" : navbarAtTop ? "#7b3636" : "#fff",
-              }}
+            }}
             >
-              Home
+            About Us
             </Link>
-          </li>
-          <li className={styles.navItem}>
             <Link
-              to="/login"
-              onClick={() => handleNavOptionClick("projects")}
-              className={isNavbarOpen ? styles.navMenuLink : ""}
-              style={{
+            to="/login"
+            className={isNavbarOpen ? styles.navMenuLink : ""}
+            style={{
                 fontWeight: "bold",
                 color: isNavbarOpen ? "#fff" : navbarAtTop ? "#7b3636" : "#fff",
-              }}
+                marginLeft: "20px",
+            }}
             >
-              Login
+            Login
             </Link>
           </li>
         </ul>
