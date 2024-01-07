@@ -6442,19 +6442,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ningy\\.nuget\\packages\\": {}
+    "C:\\Users\\teomi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ningy\\TurningRed\\contract\\AElf.Contracts.HelloWorldContract\\src\\HelloWorld.csproj",
+      "projectUniqueName": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj",
       "projectName": "HelloWorld",
-      "projectPath": "C:\\Users\\ningy\\TurningRed\\contract\\AElf.Contracts.HelloWorldContract\\src\\HelloWorld.csproj",
-      "packagesPath": "C:\\Users\\ningy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ningy\\TurningRed\\contract\\AElf.Contracts.HelloWorldContract\\src\\obj\\",
+      "projectPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj",
+      "packagesPath": "C:\\Users\\teomi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ningy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\teomi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

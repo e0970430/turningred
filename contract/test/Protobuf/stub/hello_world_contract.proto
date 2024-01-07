@@ -16,16 +16,21 @@ service HelloWorld {
   // Actions
   // Define methods name and input/output.
   rpc Initialize (google.protobuf.Empty) returns (google.protobuf.Empty);
-  rpc CreateCharacter (google.protobuf.Empty) returns (Character);
+  rpc CreateTransaction (google.protobuf.Empty) returns (Transaction);
 
   // Views
-  rpc GetMyCharacter (aelf.Address) returns (Character) {
+  rpc GetTransaction (aelf.Address) returns (Transaction) {
     option (aelf.is_view) = true;
   }
 }
 
-message Character {
-  int32 health = 1;
-  int32 strength = 2;
-  int32 speed = 3;
+message Transaction {
+  int32 senderID = 1;
+  int32 recipientID = 2;
+  int32 itemID = 3;
+  int32 quantity = 4;
+  int32 amount = 5;
+  //int32 health = 1;
+  //int32 strength = 2;
+  //int32 speed = 3;
 }

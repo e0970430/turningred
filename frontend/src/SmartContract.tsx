@@ -2,51 +2,56 @@ import { IPortkeyProvider, MethodsBase } from "@portkey/provider-types";
 import useSmartContract from "./useSmartContract";
 import { useState } from "react";
 
-function Pie({
-  number,
-  color,
-  display,
-}: {
-  number: number;
-  color: string;
-  display: number;
-}) {
-  return (
-    <svg height="200" width="200" viewBox="0 0 20 20">
-      <circle r="10" cx="10" cy="10" fill="transparent" />
-      <circle
-        r="5"
-        cx="10"
-        cy="10"
-        fill="transparent"
-        stroke={color}
-        stroke-width="10"
-        stroke-dasharray={`calc(${number} * 31.4 / 100) 31.4`}
-        transform="rotate(-90) translate(-20)"
-      />
-      <text
-        x="10"
-        y="15"
-        style={{
-          fill: "white",
-          fontSize: "3px",
-        }}
-      >
-        {display}
-      </text>
-    </svg>
-  );
-}
+// function Pie({
+//   number,
+//   color,
+//   display,
+// }: {
+//   number: number;
+//   color: string;
+//   display: number;
+// }) {
+//   return (
+//     <svg height="200" width="200" viewBox="0 0 20 20">
+//       <circle r="10" cx="10" cy="10" fill="transparent" />
+//       <circle
+//         r="5"
+//         cx="10"
+//         cy="10"
+//         fill="transparent"
+//         stroke={color}
+//         stroke-width="10"
+//         stroke-dasharray={`calc(${number} * 31.4 / 100) 31.4`}
+//         transform="rotate(-90) translate(-20)"
+//       />
+//       <text
+//         x="10"
+//         y="15"
+//         style={{
+//           fill: "white",
+//           fontSize: "3px",
+//         }}
+//       >
+//         {display}
+//       </text>
+//     </svg>
+//   );
+// }
 
-interface ICharacter {
-  health: number;
-  strength: number;
-  speed: number;
+interface SCTransaction {
+  // health: number;
+  // strength: number;
+  // speed: number;
+  sender: number;
+  recipient: number;
+  item: number;
+  quantity: number;
+  amount: number;
 }
 
 function SmartContract({ provider }: { provider: IPortkeyProvider | null }) {
-  const characterContract = useSmartContract(provider);
-  const [result, setResult] = useState<ICharacter>();
+  const transactionContract = useSmartContract(provider);
+  const [result, setResult] = useState<SCTransaction>();
   const [initialized, setInitialized] = useState(false);
 
   const onClick = async () => {
@@ -61,16 +66,16 @@ function SmartContract({ provider }: { provider: IPortkeyProvider | null }) {
 
       // 1. if not initialized, it will be initialized
       if (!initialized) {
-        await characterContract?.callSendMethod("Initialize", account, {});
+        await transactionContract?.callSendMethod("Initialize", account, {});
         setInitialized(true);
       }
 
       // 2. if a character has not been created yet, it will create a character
-      await characterContract?.callSendMethod("CreateCharacter", account, {});
+      await transactionContract?.callSendMethod("CreateSCTransaction", account, {});
 
       // 3. get character
-      const result = await characterContract?.callViewMethod<ICharacter>(
-        "GetMyCharacter",
+      const result = await transactionContract?.callViewMethod<SCTransaction>(
+        "GetSCTransaction",
         account
       );
 
@@ -78,40 +83,42 @@ function SmartContract({ provider }: { provider: IPortkeyProvider | null }) {
     } catch (error) {
       console.error(error, "====error");
     }
+    
+    console.log(result);
   };
 
   if (!provider) return null;
 
   return (
     <div>
-      <button onClick={onClick}>Get Character</button>
+      <button onClick={onClick}>Retrieve Transactions</button>
       <div style={{ display: "flex" }}>
         <div>
-          Health:
+          Sender ID: {result?.sender ?? 0}
           <br />
-          <Pie
+          {/* <Pie
             number={result?.health ?? 0}
             color="tomato"
             display={result?.health ?? 0}
-          />
+          /> */}
         </div>
         <div>
-          Strength:
+          {/* Strength: */}
           <br />
-          <Pie
+          {/* <Pie
             number={result?.strength ?? 0}
             color="green"
             display={result?.strength ?? 0}
-          />
+          /> */}
         </div>
         <div>
-          Speed:
+          {/* Speed: */}
           <br />
-          <Pie
+          {/* <Pie
             number={(result?.speed ?? 0) / 2.0}
             color="blue"
             display={result?.speed ?? 0}
-          />
+          /> */}
         </div>
       </div>
     </div>

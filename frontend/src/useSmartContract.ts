@@ -14,11 +14,12 @@ function useSmartContract(provider: IPortkeyProvider | null) {
         const chain = await provider?.getChain("tDVW");
         if (!chain) throw new Error("No chain");
 
-        const address = "xqrvvgzTom5sbt5HTtiYSgxHoSAkdPK38D6iWmVvGpnoYrv7P";
+        const address = "6qeCHKMU3ctAxKbu26AiTHZWjr3WwLnTdcqf3FnBPd3soV6qi";
+        // const address = "xqrvvgzTom5sbt5HTtiYSgxHoSAkdPK38D6iWmVvGpnoYrv7P";
 
         // 2. get the character contract
-        const characterContract = chain?.getContract(address);
-        setSmartContract(characterContract);
+        const transactionContract = chain?.getContract(address);
+        setSmartContract(transactionContract);
       } catch (error) {
         console.log(error, "====error");
       }

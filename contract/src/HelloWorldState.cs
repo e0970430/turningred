@@ -10,7 +10,7 @@ namespace AElf.Contracts.HelloWorld
     {
         //create a storage space for Character
         public BoolState Initialized { get; set; }
-        public MappedState<Address, Character> Characters { get; set; }
+        public MappedState<Address, SCTransaction> SCTransactions { get; set; }
 
         //encapsulate AEDPoS consensus contract reference state
         internal RandomNumberProvideacsrContractContainer.RandomNumberProvideacsrContractReferenceState

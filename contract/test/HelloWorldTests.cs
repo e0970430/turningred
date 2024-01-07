@@ -14,11 +14,11 @@ namespace AElf.Contracts.HelloWorld
         public async Task Rng_Test()
         {
             await HelloWorldStub.Initialize.SendAsync(new Empty());
-            var result = await HelloWorldStub.CreateCharacter.SendAsync(new Empty());
-            var character = await HelloWorldStub.GetMyCharacter.CallAsync(Accounts[0].Address);
+            var result = await HelloWorldStub.CreateSCTransaction.SendAsync(new Empty());
+            var transactionData = await HelloWorldStub.GetSCTransaction.CallAsync(Accounts[0].Address);
             
-            Assert.NotEqual(new Character(), character);
-            Assert.Equal(result.Output, character);
+            Assert.NotEqual(new SCTransaction(), transactionData);
+            Assert.Equal(result.Output, transactionData);
         }
     }
     

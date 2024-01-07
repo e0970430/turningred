@@ -18,7 +18,7 @@ namespace AElf.Contracts.HelloWorld {
 
     #region Marshallers
     static readonly aelf::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Empty.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.HelloWorld.Character> __Marshaller_Character = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.HelloWorld.Character.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::AElf.Contracts.HelloWorld.SCTransaction> __Marshaller_SCTransaction = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.HelloWorld.SCTransaction.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::AElf.Types.Address> __Marshaller_aelf_Address = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Types.Address.Parser.ParseFrom);
     #endregion
 
@@ -30,19 +30,19 @@ namespace AElf.Contracts.HelloWorld {
         __Marshaller_google_protobuf_Empty,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.Character> __Method_CreateCharacter = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.Character>(
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.SCTransaction> __Method_CreateSCTransaction = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.SCTransaction>(
         aelf::MethodType.Action,
         __ServiceName,
-        "CreateCharacter",
+        "CreateSCTransaction",
         __Marshaller_google_protobuf_Empty,
-        __Marshaller_Character);
+        __Marshaller_SCTransaction);
 
-    static readonly aelf::Method<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.Character> __Method_GetMyCharacter = new aelf::Method<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.Character>(
+    static readonly aelf::Method<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.SCTransaction> __Method_GetSCTransaction = new aelf::Method<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.SCTransaction>(
         aelf::MethodType.View,
         __ServiceName,
-        "GetMyCharacter",
+        "GetSCTransaction",
         __Marshaller_aelf_Address,
-        __Marshaller_Character);
+        __Marshaller_SCTransaction);
 
     #endregion
 
@@ -73,12 +73,12 @@ namespace AElf.Contracts.HelloWorld {
         throw new global::System.NotImplementedException();
       }
 
-      public virtual global::AElf.Contracts.HelloWorld.Character CreateCharacter(global::Google.Protobuf.WellKnownTypes.Empty input)
+      public virtual global::AElf.Contracts.HelloWorld.SCTransaction CreateSCTransaction(global::Google.Protobuf.WellKnownTypes.Empty input)
       {
         throw new global::System.NotImplementedException();
       }
 
-      public virtual global::AElf.Contracts.HelloWorld.Character GetMyCharacter(global::AElf.Types.Address input)
+      public virtual global::AElf.Contracts.HelloWorld.SCTransaction GetSCTransaction(global::AElf.Types.Address input)
       {
         throw new global::System.NotImplementedException();
       }
@@ -90,8 +90,8 @@ namespace AElf.Contracts.HelloWorld {
       return aelf::ServerServiceDefinition.CreateBuilder()
           .AddDescriptors(Descriptors)
           .AddMethod(__Method_Initialize, serviceImpl.Initialize)
-          .AddMethod(__Method_CreateCharacter, serviceImpl.CreateCharacter)
-          .AddMethod(__Method_GetMyCharacter, serviceImpl.GetMyCharacter).Build();
+          .AddMethod(__Method_CreateSCTransaction, serviceImpl.CreateSCTransaction)
+          .AddMethod(__Method_GetSCTransaction, serviceImpl.GetSCTransaction).Build();
     }
 
   }

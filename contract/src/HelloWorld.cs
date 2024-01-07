@@ -19,26 +19,27 @@ namespace AElf.Contracts.HelloWorld
                 Context.GetContractAddressByName(SmartContractConstants.ConsensusContractSystemName);
             return new Empty();
         }
-
-        public override Character CreateCharacter(Empty input)
+        public override SCTransaction CreateSCTransaction(Empty input)
         {
             var randomBytes = State.RandomNumberContract.GetRandomBytes
                 .Call(new Int64Value { Value = Context.CurrentHeight - 1 }.ToBytesValue()).Value.ToByteArray();
             var hash = HashHelper.ComputeFrom(Context.Sender).Value.ToByteArray();
 
-            var character = new Character
+            var transactionData = new SCTransaction
             {
-                Health = 60 + (randomBytes[2] ^ hash[2]) % 41, // Health is 60 ~ 100
-                Strength = 40 + (randomBytes[3] ^ hash[3]) % 61, // Strength is 40 ~ 100
-                Speed = 100 + (randomBytes[4] ^ hash[4]) % 101 // Speed is 100 ~ 200
+                Sender = 60 + (randomBytes[2] ^ hash[2]) % 41, // Health is 60 ~ 100
+                Recipient = 40 + (randomBytes[3] ^ hash[3]) % 61, // Strength is 40 ~ 100
+                Item = 100 + (randomBytes[4] ^ hash[4]) % 101, // Speed is 100 ~ 200
+                Quantity = 100 + (randomBytes[5] ^ hash[5]) % 101,
+                Amount = 100 + (randomBytes[6] ^ hash[6]) % 101
             };
-            State.Characters[Context.Sender] = character;
-            return character;
+            State.SCTransactions[Context.Sender] = transactionData;
+            return transactionData;
         }
 
-        public override Character GetMyCharacter(Address input)
+        public override SCTransaction GetSCTransaction(Address input)
         {
-            return State.Characters[input] ?? new Character();
+            return State.SCTransactions[input] ?? new SCTransaction();
         }
     }
 }
