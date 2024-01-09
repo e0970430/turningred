@@ -1,138 +1,177 @@
+
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 98%;
-    background-color: transparent;
-    color: #fff;
-    display: flex;
-    padding: 1rem;
-    z-index: 999;
-    transition: background-color 300ms ease-in-out;
-  }
-  
-  .navbar:not(.navbarAtTop) {
-    background-color: #623c3c; /* Change to the desired color */
-  }
-  
-  .navbarHidden {
-    transform: translateY(-100%);
-  }
-  
-  .navbarContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .menuIconContainer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  .logo {
-    width: 50px;
-    transition: transform 0.3s;
-  }
-  
+  position: fixed;
+  top: 0;
+  width: 98%;
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  padding: 1rem;
+  z-index: 999;
+  transition: background-color 300ms ease-in-out;
+  left: 0;
+  background-color: #623c3c;
+}
+
+.navbar:not(.navbarAtTop) {
+  background-color: #623c3c;
+}
+
+.navbarHidden {
+  transform: translateY(-100%);
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuIconContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  transition: transform 0.3s;
+}
+
+.menuIcon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s;
+}
+
+.menuIcon:hover {
+  transform: scale(1.5);
+}
+
+.navMenu {
+  list-style: none;
+  display: flex;
+}
+
+.navItem {
+  margin-right: 2rem;
+}
+
+.navItem:last-child {
+  margin-right: 50px;
+}
+
+.navItem a,
+.navMenuButton {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  transition: transform 0.3s;
+  font-size: 16px; /* Adjust the font size to your preference */
+}
+
+.navItem a:hover,
+.navMenuButton:hover {
+  transform: scale(1.1);
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.closeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
   .menuIcon {
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none; /* Hide the menu icon initially */
-    transition: transform 0.3s;
+    display: block;
+    padding-right: 190%;
   }
-  
-  .menuIcon:hover {
-    transform: scale(1.5); /* Zoom in the icon slightly on hover */
-  }
-  
+
   .navMenu {
     list-style: none;
-    display: flex;
-  }
-  
-  .navItem {
-    margin-right: 2rem;
-  }
-  
-  .navItem:last-child {
-    margin-right: 50px;
-  }
-  
-  .navItem a {
-    text-decoration: none;
-    color: #fff;
-    display: inline-block; /* Change to "inline-block" */
-    transition: transform 0.3s; /* Add transition effect on hover */
-  }
-  
-  .navItem a:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Enlarge the logo on hover */
-  .logo:hover {
-    transform: scale(1.1);
-  }
-  
-  .closeButton {
-    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #623c3c;
+    color: white;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 1rem;
-    right: 4rem;
-    font-size: 1.5rem;
-    cursor: pointer;
+    z-index: 999;
   }
-  
-  /* Media query for small screens (e.g., mobile) */
-  @media (max-width: 768px) {
-    .menuIcon {
-      display: block; /* Show the menu icon for small screens */
-      padding-right: 190%;
-    }
-  
-    .navMenu {
-      list-style: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #535947;
-      color: white;
-      padding: 1rem;
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-  
-    .navMenu.active {
-      display: flex; /* Show the navigation menu when active */
-    }
-  
-    .navMenu a {
-      text-decoration: none;
-      color: #fff;
-      display: inline-block;
-      transition: transform 0.3s;
-      margin-bottom: 1rem;
-    }
-  
-    .navMenu a:hover {
-      transform: scale(1.1);
-    }
-  
-    .navItem {
-      margin-bottom: 1rem;
-      text-align: center;
-    }
+
+  .navMenu.active {
+    display: flex;
   }
-  
-  .navMenuLink {
-    color: #fff; /* Set the link color to white in the dropdown menu */
+
+  .navMenu a,
+  .navMenuButton {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    transition: transform 0.3s;
+    margin-bottom: 1rem;
+    font-size: 16px; /* Adjust the font size to your preference */
   }
-  
+
+  .navMenu a:hover,
+  .navMenuButton:hover {
+    transform: scale(1.1);
+  }
+
+  .navItem {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+.navMenuLink {
+  color: #fff;
+}
+
+.navMenuButton {
+  font-weight: bold;
+  background-color: #fff;
+  color: #623c3c;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 20px;
+}
+
+.navMenuButton:hover {
+  background-color: #623c3c;
+  color: #fff;
+}
+
+.navMenuButton:last-child {
+  margin-right: 20px;
+}
+
+.logoutButton,
+.loginButton {
+  font-weight: bold;
+  background-color: #976060;
+  color: #fff;
+}
+
+.logoutButton:hover,
+.loginButton:hover {
+  background-color: #623c3c;
+}

@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .loginButton {
+    background-color: #283c29; /* Green */
+    color: white;
+    border: none;
+  }
+  
+  .logoutButton {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+  }
+  
+  .message {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* Add more styles as needed */
+  
