@@ -1,37 +1,24 @@
-import { useEffect, useState } from "react";
-import { IPortkeyProvider, MethodsBase } from "@portkey/provider-types";
+import React from "react";
 import "./App.css";
-import detectProvider from "@portkey/detect-provider";
-import SmartContract from "./SmartContract";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import { AuthProvider } from "./contexts/AuthContext"; // Import the AuthProvider
 
 function App() {
-  const [provider, setProvider] = useState<IPortkeyProvider | null>(null);
-
-  const init = async () => {
-    try {
-      setProvider(await detectProvider());
-    } catch (error) {
-      console.log(error, "=====error");
-    }
-  };
-
-  const connect = async () => {
-    await provider?.request({
-      method: MethodsBase.REQUEST_ACCOUNTS,
-    });
-  };
-
-  useEffect(() => {
-    if (!provider) init();
-  }, [provider]);
-
-  if (!provider) return <>Provider not found.</>;
-
   return (
-    <>
-      <button onClick={connect}>Connect</button>
-      <SmartContract provider={provider} />
-    </>
+    <div>
+      <AuthProvider> {/* Wrap your App with AuthProvider */}
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
+    </div>
   );
 }
 
