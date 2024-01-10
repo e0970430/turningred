@@ -8,7 +8,6 @@ import styles from "./Navbar.module.css";
 export default function Navbar() {
   const { userAccount, isAuthenticated, logout, connect } = useAuth();
   const [isNavbarOpen, setIsNavbarOpen] = React.useState(false);
-  const navigate = useNavigate();
 
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
@@ -30,7 +29,6 @@ export default function Navbar() {
   const handleLogout = () => {
     console.log(userAccount);
     logout();
-    navigate("/");
     window.location.reload(); 
     console.log("Logged out");
   };
@@ -64,17 +62,32 @@ export default function Navbar() {
             </div>
           )}
           <li className={styles.navItem}>
-            <Link
-              to="/"
-              onClick={() => handleNavOptionClick("about")}
-              className={isNavbarOpen ? styles.navMenuLink : ""}
-              style={{
-                fontWeight: "bold",
-                marginLeft: "20px",
-              }}
-            >
-              About Us
-            </Link>
+            {!isAuthenticated && (
+                <Link
+                  to="/"
+                  onClick={() => handleNavOptionClick("about")}
+                  className={isNavbarOpen ? styles.navMenuLink : ""}
+                  style={{
+                    fontWeight: "bold",
+                    marginLeft: "20px",
+                  }}
+                >
+                  About Us
+                </Link>
+              )}
+              {isAuthenticated && (
+                <Link
+                  to="/transactionforms"
+                  onClick={() => handleNavOptionClick("transactionforms")}
+                  className={isNavbarOpen ? styles.navMenuLink : ""}
+                  style={{
+                    fontWeight: "bold",
+                    marginLeft: "20px",
+                  }}
+                >
+                  Transaction Forms
+                </Link>
+              )}
             {isAuthenticated ? (
               <button
                 className={`${styles.navMenuButton} ${styles.logoutButton}`}

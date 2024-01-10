@@ -9,7 +9,7 @@ function Homepage() {
       {userAccount ? (
         <p className={styles.welcomeMessage}>Welcome, {userAccount}!</p>
       ) : (
-        <p className={styles.loggedMessage}>Logged in!</p>
+        <p className={styles.loggedMessage}>Loading!</p>
       )}
     </div>
   );

@@ -42,6 +42,7 @@
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
+  color: #fff;
   transition: transform 0.3s;
 }
 
@@ -94,7 +95,8 @@
 @media (max-width: 768px) {
   .menuIcon {
     display: block;
-    padding-right: 190%;
+    /* padding-right: 190%; */
+    padding-right: 20px;
   }
 
   .navMenu {
@@ -122,10 +124,12 @@
   .navMenuButton {
     text-decoration: none;
     color: #fff;
-    display: inline-block;
+    display: block;
     transition: transform 0.3s;
     margin-bottom: 1rem;
-    font-size: 16px; /* Adjust the font size to your preference */
+    font-size: 16px;
+    width: 100%;
+    position: relative;
   }
 
   .navMenu a:hover,
@@ -135,7 +139,6 @@
 
   .navItem {
     margin-bottom: 1rem;
-    text-align: center;
   }
 }
 
