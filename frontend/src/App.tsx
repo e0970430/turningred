@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Landing from "./pages/landing/Landing";
-import Login from "./pages/login/Login";
 import Homepage from "./pages/homepage/Homepage";
+import TransactionHistory from "./pages/transactionhistory/TransactionHistory";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 
 function App() {
@@ -21,17 +21,18 @@ function App() {
               }
             />
             <Route
-              path="/login"
-              element={
-                auth.isAuthenticated ? <Navigate to="/home" /> : <Login />
-              }
-            />
-            <Route
               path="/home"
               element={
                 auth.isAuthenticated ? <Homepage /> : <Navigate to="/" />
               }
             />
+            <Route
+              path="/transactionhistory"
+              element={
+                auth.isAuthenticated ? <TransactionHistory /> : <TransactionHistory />
+              }
+            />
+            console.log(auth.isAuthenticated);
           </Routes>
         </Router>
       </AuthProvider>
