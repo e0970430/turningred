@@ -1,37 +1,45 @@
-import { useEffect, useState } from "react";
-import { IPortkeyProvider, MethodsBase } from "@portkey/provider-types";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Landing from "./pages/landing/Landing";
+import Homepage from "./pages/homepage/Homepage";
+import TransactionHistory from "./pages/transactionhistory/TransactionHistory";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import "./App.css";
-import detectProvider from "@portkey/detect-provider";
-import SmartContract from "./SmartContract";
+import Transaction from './pages/Transaction';
 
 function App() {
-  const [provider, setProvider] = useState<IPortkeyProvider | null>(null);
-
-  const init = async () => {
-    try {
-      setProvider(await detectProvider());
-    } catch (error) {
-      console.log(error, "=====error");
-    }
-  };
-
-  const connect = async () => {
-    await provider?.request({
-      method: MethodsBase.REQUEST_ACCOUNTS,
-    });
-  };
-
-  useEffect(() => {
-    if (!provider) init();
-  }, [provider]);
-
-  if (!provider) return <>Provider not found.</>;
+  const auth = useAuth();
 
   return (
-    <>
-      <button onClick={connect}>Connect</button>
-      <SmartContract provider={provider} />
-    </>
+    <div>
+      <AuthProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                auth.isAuthenticated ? <Navigate to="/home" /> : <Landing />
+              }
+            />
+            <Route
+              path="/home"
+              element={
+                auth.isAuthenticated ? <Homepage /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="/transactionhistory"
+              element={
+                auth.isAuthenticated ? <TransactionHistory /> : <TransactionHistory />
+              }
+            />
+            console.log(auth.isAuthenticated);
+            <Route path="/transactionforms" element={<Transaction />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
+    </div>
   );
 }
 
