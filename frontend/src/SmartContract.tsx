@@ -1,47 +1,9 @@
 import { IPortkeyProvider, MethodsBase } from "@portkey/provider-types";
 import useSmartContract from "./useSmartContract";
-import { useState } from "react";
+import React, { useState } from "react";
 
-// function Pie({
-//   number,
-//   color,
-//   display,
-// }: {
-//   number: number;
-//   color: string;
-//   display: number;
-// }) {
-//   return (
-//     <svg height="200" width="200" viewBox="0 0 20 20">
-//       <circle r="10" cx="10" cy="10" fill="transparent" />
-//       <circle
-//         r="5"
-//         cx="10"
-//         cy="10"
-//         fill="transparent"
-//         stroke={color}
-//         stroke-width="10"
-//         stroke-dasharray={`calc(${number} * 31.4 / 100) 31.4`}
-//         transform="rotate(-90) translate(-20)"
-//       />
-//       <text
-//         x="10"
-//         y="15"
-//         style={{
-//           fill: "white",
-//           fontSize: "3px",
-//         }}
-//       >
-//         {display}
-//       </text>
-//     </svg>
-//   );
-// }
 
 interface SCTransaction {
-  // health: number;
-  // strength: number;
-  // speed: number;
   sender: number;
   recipient: number;
   item: number;
@@ -49,10 +11,43 @@ interface SCTransaction {
   amount: number;
 }
 
+let accountAddress: string | undefined;
+
+export const currentAccountAddress = async (provider: IPortkeyProvider | null) => {
+  try {
+    const accounts = await provider?.request({
+      method: MethodsBase.ACCOUNTS,
+    });
+    if (!accounts) throw new Error("No accounts");
+
+    accountAddress = accounts?.tDVW?.[0]!;
+    if (!accountAddress) throw new Error("No account");
+    
+  } catch (error) {
+    console.error("Error retrieving account address:", error);
+  }
+};
+
+
+export { accountAddress };
+
 function SmartContract({ provider }: { provider: IPortkeyProvider | null }) {
   const transactionContract = useSmartContract(provider);
   const [result, setResult] = useState<SCTransaction>();
   const [initialized, setInitialized] = useState(false);
+
+  const [sender, setSender] = useState('');
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSender(event.target.value);
+  };
+
+  // Function to handle form submission
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Do something with the sender value, e.g., send it to a backend server
+    console.log('Sender:', sender);
+  };
 
   const onClick = async () => {
     try {
@@ -70,10 +65,10 @@ function SmartContract({ provider }: { provider: IPortkeyProvider | null }) {
         setInitialized(true);
       }
 
-      // 2. if a character has not been created yet, it will create a character
+      // 2. if a transaction has not been created yet, it will create a transaction
       await transactionContract?.callSendMethod("CreateSCTransaction", account, {});
 
-      // 3. get character
+      // 3. get transaction
       const result = await transactionContract?.callViewMethod<SCTransaction>(
         "GetSCTransaction",
         account
@@ -85,6 +80,7 @@ function SmartContract({ provider }: { provider: IPortkeyProvider | null }) {
     }
     
     console.log(result);
+    console.log(accountAddress);
   };
 
   if (!provider) return null;

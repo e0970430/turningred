@@ -12,8 +12,11 @@
   "dependencies": {
     "@portkey/detect-provider": "^1.1.1-alpha.1",
     "aelf-sdk": "^3.4.2-alpha",
+    "native-base": "^3.4.28",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-native": "^0.73.2",
+    "react-native-web": "^0.19.10"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
