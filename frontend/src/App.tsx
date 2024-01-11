@@ -4,6 +4,8 @@ import Landing from "./pages/landing/Landing";
 import Homepage from "./pages/homepage/Homepage";
 import TransactionHistory from "./pages/transactionhistory/TransactionHistory";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import "./App.css";
+import Transaction from './pages/Transaction';
 
 function App() {
   const auth = useAuth();
@@ -33,6 +35,7 @@ function App() {
               }
             />
             console.log(auth.isAuthenticated);
+            <Route path="/transactionforms" element={<Transaction />} />
           </Routes>
         </Router>
       </AuthProvider>
