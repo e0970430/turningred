@@ -93,6 +93,19 @@ export default function Navbar() {
                   Transaction History
                 </Link>
               )}
+              {isAuthenticated && (
+                <Link
+                  to="/transactionforms"
+                  onClick={() => handleNavOptionClickNormal("transactionforms")}
+                  className={isNavbarOpen ? styles.navMenuLink : ""}
+                  style={{
+                    fontWeight: "bold",
+                    marginLeft: "20px",
+                  }}
+                >
+                  Transaction Forms
+                </Link>
+              )}
             {isAuthenticated ? (
               <button
                 className={`${styles.navMenuButton} ${styles.logoutButton}`}
