@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import logo from "./logo.png";
 import { useAuth } from "../contexts/AuthContext";
 import styles from "./Navbar.module.css";
@@ -23,6 +23,11 @@ export default function Navbar() {
 
   const handleNavOptionClick = (targetId) => {
     smoothScrollTo(targetId);
+    setIsNavbarOpen(false);
+  };
+
+  const handleNavOptionClickNormal = (targetId) => {
+    Navigate(targetId);
     setIsNavbarOpen(false);
   };
 
@@ -77,15 +82,15 @@ export default function Navbar() {
               )}
               {isAuthenticated && (
                 <Link
-                  to="/transactionforms"
-                  onClick={() => handleNavOptionClick("transactionforms")}
+                  to="/transactionhistory"
+                  onClick={() => handleNavOptionClickNormal("transactionhistory")}
                   className={isNavbarOpen ? styles.navMenuLink : ""}
                   style={{
                     fontWeight: "bold",
                     marginLeft: "20px",
                   }}
                 >
-                  Transaction Forms
+                  Transaction History
                 </Link>
               )}
             {isAuthenticated ? (
