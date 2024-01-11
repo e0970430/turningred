@@ -40,7 +40,7 @@ function Transaction({ provider }: { provider: IPortkeyProvider | null }) {
                     <h2 className="field-label">Remarks</h2>
                     <input type="text" id="remarks" placeholder='' onChange={(e) => setRemarks(e.target.value)} value={remarks}/>
                 </div>
-                <Link to={'/landing'} style={{justifyContent: "center", alignItems:"center"}}>
+                <Link to={'/'} style={{justifyContent: "center", alignItems:"center"}}>
                     <button style={{justifyContent: "left", alignItems:"left", backgroundColor: "#f1b6ac",border: "none",fontSize:18, lineHeight:1.5, display: "inline-block"}}>
                         Send Transaction
                     </button>
@@ -50,7 +50,7 @@ function Transaction({ provider }: { provider: IPortkeyProvider | null }) {
                 <h1 className="field-label">Transaction History</h1>
                 <text className="tx-label">14 December 2023: POFHSW73L</text>
                 <text className="tx-label">16 December 2023: HFWDMA28U</text>
-                <text className="tx-label">14 December 2023: OFKWFN84J</text>
+                <text className="tx-label">27 December 2023: OFKWFN84J</text>
             </colgroup>
         </div>
     );
