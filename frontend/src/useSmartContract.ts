@@ -14,7 +14,7 @@ function useSmartContract(provider: IPortkeyProvider | null) {
         const chain = await provider?.getChain("tDVW");
         if (!chain) throw new Error("No chain");
 
-        const address = "6qeCHKMU3ctAxKbu26AiTHZWjr3WwLnTdcqf3FnBPd3soV6qi";
+        const address = "ELF_75nJAjXxhN3WG7sSkFZfR7Hkj6vQHk3Hf3HjEwPBmchkcY7in_tDVW";
         // const address = "ELF_75nJAjXxhN3WG7sSkFZfR7Hkj6vQHk3Hf3HjEwPBmchkcY7in_tDVW";
 
         // 2. get the character contract
