@@ -96,6 +96,17 @@ export default function Navbar() {
             >
             Login
             </Link>
+            <Link
+            to="/transaction"
+            className={isNavbarOpen ? styles.navMenuLink : ""}
+            style={{
+                fontWeight: "bold",
+                color: isNavbarOpen ? "#fff" : navbarAtTop ? "#7b3636" : "#fff",
+                marginLeft: "20px",
+            }}
+            >
+            New Transaction
+            </Link>
           </li>
         </ul>
       </div>
