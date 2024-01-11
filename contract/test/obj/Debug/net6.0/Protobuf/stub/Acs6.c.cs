@@ -11,7 +11,7 @@ using aelf = global::AElf.CSharp.Core;
 namespace AElf.Standards.ACS6 {
 
   #region Events
-  internal partial class RandomBytesGenerated : aelf::IEvent<RandomBytesGenerated>
+  public partial class RandomBytesGenerated : aelf::IEvent<RandomBytesGenerated>
   {
     public global::System.Collections.Generic.IEnumerable<RandomBytesGenerated> GetIndexed()
     {
@@ -31,7 +31,7 @@ namespace AElf.Standards.ACS6 {
   }
 
   #endregion
-  internal static partial class RandomNumberProvideacsrContractContainer
+  public static partial class RandomNumberProvideacsrContractContainer
   {
     static readonly string __ServiceName = "acs6.RandomNumberProvideacsrContract";
 

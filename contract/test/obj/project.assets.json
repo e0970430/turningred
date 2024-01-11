@@ -12343,19 +12343,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ningy\\.nuget\\packages\\": {}
+    "C:\\Users\\teomi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ningy\\TurningRed\\contract\\AElf.Contracts.HelloWorldContract\\test\\HelloWorld.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\test\\HelloWorld.Tests.csproj",
       "projectName": "HelloWorld.Tests",
-      "projectPath": "C:\\Users\\ningy\\TurningRed\\contract\\AElf.Contracts.HelloWorldContract\\test\\HelloWorld.Tests.csproj",
-      "packagesPath": "C:\\Users\\ningy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ningy\\TurningRed\\contract\\AElf.Contracts.HelloWorldContract\\test\\obj\\",
+      "projectPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\test\\HelloWorld.Tests.csproj",
+      "packagesPath": "C:\\Users\\teomi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ningy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\teomi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -12367,8 +12367,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ningy\\TurningRed\\contract\\AElf.Contracts.HelloWorldContract\\src\\HelloWorld.csproj": {
-              "projectPath": "C:\\Users\\ningy\\TurningRed\\contract\\AElf.Contracts.HelloWorldContract\\src\\HelloWorld.csproj"
+            "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj": {
+              "projectPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj"
             }
           }
         }

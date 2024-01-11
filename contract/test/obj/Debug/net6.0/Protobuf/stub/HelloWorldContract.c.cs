@@ -12,13 +12,13 @@ namespace AElf.Contracts.HelloWorld {
 
   #region Events
   #endregion
-  internal static partial class HelloWorldContainer
+  public static partial class HelloWorldContainer
   {
     static readonly string __ServiceName = "HelloWorld";
 
     #region Marshallers
     static readonly aelf::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Empty.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::AElf.Contracts.HelloWorld.Character> __Marshaller_Character = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.HelloWorld.Character.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::AElf.Contracts.HelloWorld.Transaction> __Marshaller_Transaction = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Contracts.HelloWorld.Transaction.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::AElf.Types.Address> __Marshaller_aelf_Address = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Types.Address.Parser.ParseFrom);
     #endregion
 
@@ -30,19 +30,19 @@ namespace AElf.Contracts.HelloWorld {
         __Marshaller_google_protobuf_Empty,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.Character> __Method_CreateCharacter = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.Character>(
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.Transaction> __Method_CreateTransaction = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.Transaction>(
         aelf::MethodType.Action,
         __ServiceName,
-        "CreateCharacter",
+        "CreateTransaction",
         __Marshaller_google_protobuf_Empty,
-        __Marshaller_Character);
+        __Marshaller_Transaction);
 
-    static readonly aelf::Method<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.Character> __Method_GetMyCharacter = new aelf::Method<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.Character>(
+    static readonly aelf::Method<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.Transaction> __Method_GetTransaction = new aelf::Method<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.Transaction>(
         aelf::MethodType.View,
         __ServiceName,
-        "GetMyCharacter",
+        "GetTransaction",
         __Marshaller_aelf_Address,
-        __Marshaller_Character);
+        __Marshaller_Transaction);
 
     #endregion
 
@@ -72,14 +72,14 @@ namespace AElf.Contracts.HelloWorld {
         get { return __factory.Create(__Method_Initialize); }
       }
 
-      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.Character> CreateCharacter
+      public aelf::IMethodStub<global::Google.Protobuf.WellKnownTypes.Empty, global::AElf.Contracts.HelloWorld.Transaction> CreateTransaction
       {
-        get { return __factory.Create(__Method_CreateCharacter); }
+        get { return __factory.Create(__Method_CreateTransaction); }
       }
 
-      public aelf::IMethodStub<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.Character> GetMyCharacter
+      public aelf::IMethodStub<global::AElf.Types.Address, global::AElf.Contracts.HelloWorld.Transaction> GetTransaction
       {
-        get { return __factory.Create(__Method_GetMyCharacter); }
+        get { return __factory.Create(__Method_GetTransaction); }
       }
 
     }

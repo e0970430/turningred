@@ -12,7 +12,7 @@ using scg = global::System.Collections.Generic;
 namespace AElf.Contracts.HelloWorld {
 
   /// <summary>Holder for reflection information generated from Protobuf/stub/hello_world_contract.proto</summary>
-  internal static partial class HelloWorldContractReflection {
+  public static partial class HelloWorldContractReflection {
 
     #region Descriptor
     /// <summary>File descriptor for Protobuf/stub/hello_world_contract.proto</summary>
@@ -27,35 +27,37 @@ namespace AElf.Contracts.HelloWorld {
             "CihQcm90b2J1Zi9zdHViL2hlbGxvX3dvcmxkX2NvbnRyYWN0LnByb3RvGg9h",
             "ZWxmL2NvcmUucHJvdG8aEmFlbGYvb3B0aW9ucy5wcm90bxobZ29vZ2xlL3By",
             "b3RvYnVmL2VtcHR5LnByb3RvGh5nb29nbGUvcHJvdG9idWYvd3JhcHBlcnMu",
-            "cHJvdG8aHlByb3RvYnVmL3JlZmVyZW5jZS9hY3MxMi5wcm90byI8CglDaGFy",
-            "YWN0ZXISDgoGaGVhbHRoGAEgASgFEhAKCHN0cmVuZ3RoGAIgASgFEg0KBXNw",
-            "ZWVkGAMgASgFMogCCgpIZWxsb1dvcmxkEjwKCkluaXRpYWxpemUSFi5nb29n",
-            "bGUucHJvdG9idWYuRW1wdHkaFi5nb29nbGUucHJvdG9idWYuRW1wdHkSNQoP",
-            "Q3JlYXRlQ2hhcmFjdGVyEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GgouQ2hh",
-            "cmFjdGVyEjIKDkdldE15Q2hhcmFjdGVyEg0uYWVsZi5BZGRyZXNzGgouQ2hh",
-            "cmFjdGVyIgWIifcBARpRssz2ASlBRWxmLkNvbnRyYWN0cy5IZWxsb1dvcmxk",
-            "LkhlbGxvV29ybGRTdGF0ZcrK9gEeUHJvdG9idWYvcmVmZXJlbmNlL2FjczEy",
-            "LnByb3RvQhyqAhlBRWxmLkNvbnRyYWN0cy5IZWxsb1dvcmxkYgZwcm90bzM="));
+            "cHJvdG8aHlByb3RvYnVmL3JlZmVyZW5jZS9hY3MxMi5wcm90byJmCgtUcmFu",
+            "c2FjdGlvbhIQCghzZW5kZXJJRBgBIAEoBRITCgtyZWNpcGllbnRJRBgCIAEo",
+            "BRIOCgZpdGVtSUQYAyABKAUSEAoIcXVhbnRpdHkYBCABKAUSDgoGYW1vdW50",
+            "GAUgASgFMo4CCgpIZWxsb1dvcmxkEjwKCkluaXRpYWxpemUSFi5nb29nbGUu",
+            "cHJvdG9idWYuRW1wdHkaFi5nb29nbGUucHJvdG9idWYuRW1wdHkSOQoRQ3Jl",
+            "YXRlVHJhbnNhY3Rpb24SFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDC5UcmFu",
+            "c2FjdGlvbhI0Cg5HZXRUcmFuc2FjdGlvbhINLmFlbGYuQWRkcmVzcxoMLlRy",
+            "YW5zYWN0aW9uIgWIifcBARpRssz2ASlBRWxmLkNvbnRyYWN0cy5IZWxsb1dv",
+            "cmxkLkhlbGxvV29ybGRTdGF0ZcrK9gEeUHJvdG9idWYvcmVmZXJlbmNlL2Fj",
+            "czEyLnByb3RvQhyqAhlBRWxmLkNvbnRyYWN0cy5IZWxsb1dvcmxkYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::AElf.Standards.ACS12.Acs12Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.HelloWorld.Character), global::AElf.Contracts.HelloWorld.Character.Parser, new[]{ "Health", "Strength", "Speed" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::AElf.Contracts.HelloWorld.Transaction), global::AElf.Contracts.HelloWorld.Transaction.Parser, new[]{ "SenderID", "RecipientID", "ItemID", "Quantity", "Amount" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  internal sealed partial class Character : pb::IMessage<Character>
+  public sealed partial class Transaction : pb::IMessage<Transaction>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<Character> _parser = new pb::MessageParser<Character>(() => new Character());
+    private static readonly pb::MessageParser<Transaction> _parser = new pb::MessageParser<Transaction>(() => new Transaction());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<Character> Parser { get { return _parser; } }
+    public static pb::MessageParser<Transaction> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -71,7 +73,7 @@ namespace AElf.Contracts.HelloWorld {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Character() {
+    public Transaction() {
       OnConstruction();
     }
 
@@ -79,73 +81,106 @@ namespace AElf.Contracts.HelloWorld {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Character(Character other) : this() {
-      health_ = other.health_;
-      strength_ = other.strength_;
-      speed_ = other.speed_;
+    public Transaction(Transaction other) : this() {
+      senderID_ = other.senderID_;
+      recipientID_ = other.recipientID_;
+      itemID_ = other.itemID_;
+      quantity_ = other.quantity_;
+      amount_ = other.amount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Character Clone() {
-      return new Character(this);
+    public Transaction Clone() {
+      return new Transaction(this);
     }
 
-    /// <summary>Field number for the "health" field.</summary>
-    public const int HealthFieldNumber = 1;
-    private int health_;
+    /// <summary>Field number for the "senderID" field.</summary>
+    public const int SenderIDFieldNumber = 1;
+    private int senderID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Health {
-      get { return health_; }
+    public int SenderID {
+      get { return senderID_; }
       set {
-        health_ = value;
+        senderID_ = value;
       }
     }
 
-    /// <summary>Field number for the "strength" field.</summary>
-    public const int StrengthFieldNumber = 2;
-    private int strength_;
+    /// <summary>Field number for the "recipientID" field.</summary>
+    public const int RecipientIDFieldNumber = 2;
+    private int recipientID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Strength {
-      get { return strength_; }
+    public int RecipientID {
+      get { return recipientID_; }
       set {
-        strength_ = value;
+        recipientID_ = value;
       }
     }
 
-    /// <summary>Field number for the "speed" field.</summary>
-    public const int SpeedFieldNumber = 3;
-    private int speed_;
+    /// <summary>Field number for the "itemID" field.</summary>
+    public const int ItemIDFieldNumber = 3;
+    private int itemID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Speed {
-      get { return speed_; }
+    public int ItemID {
+      get { return itemID_; }
       set {
-        speed_ = value;
+        itemID_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "quantity" field.</summary>
+    public const int QuantityFieldNumber = 4;
+    private int quantity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Quantity {
+      get { return quantity_; }
+      set {
+        quantity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "amount" field.</summary>
+    public const int AmountFieldNumber = 5;
+    private int amount_;
+    /// <summary>
+    ///int32 health = 1;
+    ///int32 strength = 2;
+    ///int32 speed = 3;
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Amount {
+      get { return amount_; }
+      set {
+        amount_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as Character);
+      return Equals(other as Transaction);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(Character other) {
+    public bool Equals(Transaction other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Health != other.Health) return false;
-      if (Strength != other.Strength) return false;
-      if (Speed != other.Speed) return false;
+      if (SenderID != other.SenderID) return false;
+      if (RecipientID != other.RecipientID) return false;
+      if (ItemID != other.ItemID) return false;
+      if (Quantity != other.Quantity) return false;
+      if (Amount != other.Amount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -153,9 +188,11 @@ namespace AElf.Contracts.HelloWorld {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Health != 0) hash ^= Health.GetHashCode();
-      if (Strength != 0) hash ^= Strength.GetHashCode();
-      if (Speed != 0) hash ^= Speed.GetHashCode();
+      if (SenderID != 0) hash ^= SenderID.GetHashCode();
+      if (RecipientID != 0) hash ^= RecipientID.GetHashCode();
+      if (ItemID != 0) hash ^= ItemID.GetHashCode();
+      if (Quantity != 0) hash ^= Quantity.GetHashCode();
+      if (Amount != 0) hash ^= Amount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,17 +211,25 @@ namespace AElf.Contracts.HelloWorld {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Health != 0) {
+      if (SenderID != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(Health);
+        output.WriteInt32(SenderID);
       }
-      if (Strength != 0) {
+      if (RecipientID != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(Strength);
+        output.WriteInt32(RecipientID);
       }
-      if (Speed != 0) {
+      if (ItemID != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(Speed);
+        output.WriteInt32(ItemID);
+      }
+      if (Quantity != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Quantity);
+      }
+      if (Amount != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Amount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -196,17 +241,25 @@ namespace AElf.Contracts.HelloWorld {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Health != 0) {
+      if (SenderID != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(Health);
+        output.WriteInt32(SenderID);
       }
-      if (Strength != 0) {
+      if (RecipientID != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(Strength);
+        output.WriteInt32(RecipientID);
       }
-      if (Speed != 0) {
+      if (ItemID != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(Speed);
+        output.WriteInt32(ItemID);
+      }
+      if (Quantity != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Quantity);
+      }
+      if (Amount != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Amount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,14 +271,20 @@ namespace AElf.Contracts.HelloWorld {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Health != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Health);
+      if (SenderID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SenderID);
       }
-      if (Strength != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Strength);
+      if (RecipientID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RecipientID);
       }
-      if (Speed != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Speed);
+      if (ItemID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ItemID);
+      }
+      if (Quantity != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Quantity);
+      }
+      if (Amount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Amount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -235,18 +294,24 @@ namespace AElf.Contracts.HelloWorld {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(Character other) {
+    public void MergeFrom(Transaction other) {
       if (other == null) {
         return;
       }
-      if (other.Health != 0) {
-        Health = other.Health;
+      if (other.SenderID != 0) {
+        SenderID = other.SenderID;
       }
-      if (other.Strength != 0) {
-        Strength = other.Strength;
+      if (other.RecipientID != 0) {
+        RecipientID = other.RecipientID;
       }
-      if (other.Speed != 0) {
-        Speed = other.Speed;
+      if (other.ItemID != 0) {
+        ItemID = other.ItemID;
+      }
+      if (other.Quantity != 0) {
+        Quantity = other.Quantity;
+      }
+      if (other.Amount != 0) {
+        Amount = other.Amount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,15 +329,23 @@ namespace AElf.Contracts.HelloWorld {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Health = input.ReadInt32();
+            SenderID = input.ReadInt32();
             break;
           }
           case 16: {
-            Strength = input.ReadInt32();
+            RecipientID = input.ReadInt32();
             break;
           }
           case 24: {
-            Speed = input.ReadInt32();
+            ItemID = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Quantity = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Amount = input.ReadInt32();
             break;
           }
         }
@@ -291,15 +364,23 @@ namespace AElf.Contracts.HelloWorld {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Health = input.ReadInt32();
+            SenderID = input.ReadInt32();
             break;
           }
           case 16: {
-            Strength = input.ReadInt32();
+            RecipientID = input.ReadInt32();
             break;
           }
           case 24: {
-            Speed = input.ReadInt32();
+            ItemID = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Quantity = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Amount = input.ReadInt32();
             break;
           }
         }

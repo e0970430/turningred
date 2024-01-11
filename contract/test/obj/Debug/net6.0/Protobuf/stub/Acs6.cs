@@ -12,7 +12,7 @@ using scg = global::System.Collections.Generic;
 namespace AElf.Standards.ACS6 {
 
   /// <summary>Holder for reflection information generated from Protobuf/stub/acs6.proto</summary>
-  internal static partial class Acs6Reflection {
+  public static partial class Acs6Reflection {
 
     #region Descriptor
     /// <summary>File descriptor for Protobuf/stub/acs6.proto</summary>
@@ -42,7 +42,7 @@ namespace AElf.Standards.ACS6 {
 
   }
   #region Messages
-  internal sealed partial class RandomBytesGenerated : pb::IMessage<RandomBytesGenerated>
+  public sealed partial class RandomBytesGenerated : pb::IMessage<RandomBytesGenerated>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
