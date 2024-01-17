@@ -6442,19 +6442,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\teomi\\.nuget\\packages\\": {}
+    "C:\\Users\\emmyt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj",
+      "projectUniqueName": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\HelloWorld.csproj",
       "projectName": "HelloWorld",
-      "projectPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj",
-      "packagesPath": "C:\\Users\\teomi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\obj\\",
+      "projectPath": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\HelloWorld.csproj",
+      "packagesPath": "C:\\Users\\emmyt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\teomi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\emmyt\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

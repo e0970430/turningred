@@ -6,9 +6,27 @@ import TransactionHistory from "./pages/transactionhistory/TransactionHistory";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import "./App.css";
 import Transaction from './pages/Transaction';
+import detectProvider from "@portkey/detect-provider";
+import { IPortkeyProvider, MethodsBase } from "@portkey/provider-types";
+import { useEffect, useState } from "react";
 
 function App() {
   const auth = useAuth();
+  const [provider, setProvider] = useState<IPortkeyProvider | null>(null);
+
+  const init = async () => {
+    try {
+      setProvider(await detectProvider());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (!provider) init();
+  }, [provider]);
+
+  if (!provider) return <>Provider not found.</>;
 
   return (
     <div>
@@ -35,7 +53,7 @@ function App() {
               }
             />
             console.log(auth.isAuthenticated);
-            <Route path="/transactionforms" element={<Transaction />} />
+            <Route path="/transactionforms" element={<Transaction provider={provider}/>} />
           </Routes>
         </Router>
       </AuthProvider>

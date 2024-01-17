@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@portkey/detect-provider": "^1.1.1-alpha.1",
-    "aelf-sdk": "^3.4.2-alpha",
+    "@portkey/detect-provider": "^1.1.1",
+    "@portkey/provider-types": "^2.0.0-alpha.1",
+    "aelf-sdk": "^3.4.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.21.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

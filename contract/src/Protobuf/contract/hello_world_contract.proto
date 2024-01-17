@@ -5,6 +5,9 @@ import "aelf/options.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
 import "Protobuf/reference/acs12.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/map.proto";
+
 // Define the namespace of this class.
 option csharp_namespace = "AElf.Contracts.HelloWorld";
 
@@ -16,7 +19,7 @@ service HelloWorld {
     // Actions
     // Define methods name and input/output.
     rpc Initialize (google.protobuf.Empty) returns (google.protobuf.Empty);
-    rpc CreateSCTransaction (google.protobuf.Empty) returns (SCTransaction);
+    rpc CreateSCTransaction (google.protobuf.Int32Value) returns (SCTransaction);
 
     // Views
     rpc GetSCTransaction (aelf.Address) returns (SCTransaction) {
@@ -30,4 +33,8 @@ message SCTransaction {
     int32 item = 3;
     int32 quantity = 4;
     int32 amount = 5;
+}
+
+message SCTransactionInput {
+    google.protobuf.Struct input_params = 1;
 }

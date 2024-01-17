@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\test\\HelloWorld.Tests.csproj": {}
+    "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\test\\HelloWorld.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj": {
+    "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\HelloWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj",
+        "projectUniqueName": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\HelloWorld.csproj",
         "projectName": "HelloWorld",
-        "projectPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj",
-        "packagesPath": "C:\\Users\\teomi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\obj\\",
+        "projectPath": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\HelloWorld.csproj",
+        "packagesPath": "C:\\Users\\emmyt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\teomi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\emmyt\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -83,17 +83,17 @@
         }
       }
     },
-    "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\test\\HelloWorld.Tests.csproj": {
+    "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\test\\HelloWorld.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\test\\HelloWorld.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\test\\HelloWorld.Tests.csproj",
         "projectName": "HelloWorld.Tests",
-        "projectPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\test\\HelloWorld.Tests.csproj",
-        "packagesPath": "C:\\Users\\teomi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\test\\obj\\",
+        "projectPath": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\test\\HelloWorld.Tests.csproj",
+        "packagesPath": "C:\\Users\\emmyt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\teomi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\emmyt\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -105,8 +105,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj": {
-                "projectPath": "C:\\Users\\teomi\\OneDrive\\Documents\\Desktop\\HACKATHONS\\turningred\\contract\\src\\HelloWorld.csproj"
+              "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\HelloWorld.csproj": {
+                "projectPath": "C:\\Users\\emmyt\\Documents\\NUS\\NUS Fintech Hackathon\\turningRed\\turningred-1\\contract\\src\\HelloWorld.csproj"
               }
             }
           }

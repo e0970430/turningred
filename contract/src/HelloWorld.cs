@@ -1,7 +1,7 @@
 using AElf.Sdk.CSharp;
 using AElf.Types;
 using Google.Protobuf.WellKnownTypes;
-import { accountAddress } from '../../frontend/src/SmartContract.tsx';
+using System.Collections.Generic;
 
 namespace AElf.Contracts.HelloWorld
 {
@@ -20,7 +20,7 @@ namespace AElf.Contracts.HelloWorld
                 Context.GetContractAddressByName(SmartContractConstants.ConsensusContractSystemName);
             return new Empty();
         }
-        public override SCTransaction CreateSCTransaction(Empty input)
+        public override SCTransaction CreateSCTransaction(Int32Value input)
         {
             var randomBytes = State.RandomNumberContract.GetRandomBytes
                 .Call(new Int64Value { Value = Context.CurrentHeight - 1 }.ToBytesValue()).Value.ToByteArray();
@@ -28,15 +28,45 @@ namespace AElf.Contracts.HelloWorld
 
             var transactionData = new SCTransaction
             {
-                Sender = { accountAddress }, // sender value is autopopulated
+                Sender = 50 + (randomBytes[3] ^ hash[3]) % 61, // sender value is autopopulated
                 Recipient = 40 + (randomBytes[3] ^ hash[3]) % 61, 
                 Item = 100 + (randomBytes[4] ^ hash[4]) % 101, 
                 Quantity = 100 + (randomBytes[5] ^ hash[5]) % 101,
-                Amount = 100 + (randomBytes[6] ^ hash[6]) % 101
+                Amount = input.Value,
+                // Amount = 100 + (randomBytes[6] ^ hash[6]) % 101
+                // Sender = (int)input["SenderID"],
+                // Recipient = (int)input["RecipientID"],
+                // Item = (int)input["ItemID"],
+                // Quantity = (int)input["Quantity"],
+                // Amount = (int)input["Amount"]
             };
             State.SCTransactions[Context.Sender] = transactionData;
             return transactionData;
         }
+
+        // public override SCTransaction CreateSCTransaction(Int32Value input)
+        // {
+        //     // Accessing values from google.protobuf.Struct
+        //     var sender = (int)input.InputParams.Fields["SenderID"].NumberValue;
+        //     var recipient = (int)input.InputParams.Fields["RecipientID"].NumberValue;
+        //     var item = (int)input.InputParams.Fields["ItemID"].NumberValue;
+        //     var quantity = (int)input.InputParams.Fields["Quantity"].NumberValue;
+        //     var amount = (int)input.InputParams.Fields["Amount"].NumberValue;
+
+        //     // Your existing logic
+        //     var transactionData = new SCTransaction
+        //     {
+        //         Sender = sender,
+        //         Recipient = recipient,
+        //         Item = item,
+        //         Quantity = quantity,
+        //         Amount = amount
+        //     };
+
+        //     State.SCTransactions[Context.Sender] = transactionData;
+        //     return transactionData;
+        // }
+
 
         public override SCTransaction GetSCTransaction(Address input)
         {
