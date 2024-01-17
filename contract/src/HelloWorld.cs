@@ -1,7 +1,6 @@
 using AElf.Sdk.CSharp;
 using AElf.Types;
 using Google.Protobuf.WellKnownTypes;
-import { accountAddress } from '../../frontend/src/SmartContract.tsx';
 
 namespace AElf.Contracts.HelloWorld
 {
@@ -28,7 +27,7 @@ namespace AElf.Contracts.HelloWorld
 
             var transactionData = new SCTransaction
             {
-                Sender = { accountAddress }, // sender value is autopopulated
+                Sender = Context.Sender, // sender value is autopopulated
                 Recipient = 40 + (randomBytes[3] ^ hash[3]) % 61, 
                 Item = 100 + (randomBytes[4] ^ hash[4]) % 101, 
                 Quantity = 100 + (randomBytes[5] ^ hash[5]) % 101,
@@ -40,8 +39,7 @@ namespace AElf.Contracts.HelloWorld
 
         public override SCTransaction GetSCTransaction(Address input)
         {
-            return new SCTransaction();
-            //return State.SCTransactions[input] ?? new SCTransaction();
+            return State.SCTransactions[input] ?? new SCTransaction();
         }
     }
 }
