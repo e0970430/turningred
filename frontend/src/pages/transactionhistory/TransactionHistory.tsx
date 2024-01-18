@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import AElf from 'aelf-sdk';
+import styles from './TransactionHistory.module.css';
 
 const TransactionHistoryPage: React.FC = () => {
-  const [transactions, setTransactions] = useState<any[]>([]); // Adjust the type accordingly
+  const [transactions, setTransactions] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Initialize AElf and set the provider
@@ -30,20 +32,24 @@ const TransactionHistoryPage: React.FC = () => {
       setTransactions(extractedTransactions);
     } catch (error) {
       console.error('Error fetching transaction history:', error);
+      setError('Sorry there seems to be some errors! Contact your administrator for more information.');
     }
   };
 
   return (
-    <div>
-      <h1>Transaction History</h1>
-      <ul>
-        {transactions.map((transaction, index) => (
-          <li key={index}>
-            <p>Transaction ID: {transaction.transactionId}</p>
-            <p>Status: {transaction.status}</p> 
-          </li>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      {error ? (
+        <p className={styles.error}>{error}</p>
+      ) : (
+        <ul>
+          {transactions.map((transaction, index) => (
+            <li key={index}>
+              <p>Transaction ID: {transaction.transactionId}</p>
+              <p>Status: {transaction.status}</p> 
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
