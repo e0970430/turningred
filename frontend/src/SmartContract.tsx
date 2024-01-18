@@ -1,6 +1,6 @@
 import { IPortkeyProvider, MethodsBase } from "@portkey/provider-types";
 import useSmartContract from "./useSmartContract";
-import React, { useState } from "react";
+import { useState } from "react";
 
 
 interface SCTransaction {
@@ -36,18 +36,17 @@ function SmartContract({ provider }: { provider: IPortkeyProvider | null }) {
   const [result, setResult] = useState<SCTransaction>();
   const [initialized, setInitialized] = useState(false);
 
-  const [sender, setSender] = useState('');
+  // const [sender, setSender] = useState('');
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSender(event.target.value);
-  };
+  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setSender(event.target.value);
+  // };
 
   // Function to handle form submission
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Do something with the sender value, e.g., send it to a backend server
-    console.log('Sender:', sender);
-  };
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   console.log('Sender:', sender);
+  // };
 
   const onClick = async () => {
     try {
@@ -91,30 +90,6 @@ function SmartContract({ provider }: { provider: IPortkeyProvider | null }) {
       <div style={{ display: "flex" }}>
         <div>
           Sender ID: {result?.sender ?? 0}
-          <br />
-          {/* <Pie
-            number={result?.health ?? 0}
-            color="tomato"
-            display={result?.health ?? 0}
-          /> */}
-        </div>
-        <div>
-          {/* Strength: */}
-          <br />
-          {/* <Pie
-            number={result?.strength ?? 0}
-            color="green"
-            display={result?.strength ?? 0}
-          /> */}
-        </div>
-        <div>
-          {/* Speed: */}
-          <br />
-          {/* <Pie
-            number={(result?.speed ?? 0) / 2.0}
-            color="blue"
-            display={result?.speed ?? 0}
-          /> */}
         </div>
       </div>
     </div>

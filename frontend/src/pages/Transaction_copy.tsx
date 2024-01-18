@@ -27,10 +27,10 @@ function Transaction({ provider }: { provider: IPortkeyProvider | null }) {
             const receipt = await provider?.request({
                 method: MethodsBase.SEND_TRANSACTION,
                 payload: {
-                    rpcUrl: string;
-                    chainId: ChainId;
-                    contractAddress: useAuth();
-                    method: string; //smart contract method
+                    rpcUrl: string,
+                    chainId: ChainId,
+                    contractAddress: useAuth(),
+                    method: string, //smart contract method
                     params?: {
                         senderID: senderID,
                         itemID: itemID,

@@ -1,14 +1,18 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import { IPortkeyProvider } from "@portkey/provider-types";
+import { useEffect, useState } from "react";
+import detectProvider from "@portkey/detect-provider";
+
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Landing from "./pages/landing/Landing";
 import Homepage from "./pages/homepage/Homepage";
 import TransactionHistory from "./pages/transactionhistory/TransactionHistory";
-import { AuthProvider, useAuth } from "./contexts/AuthContext";
-import "./App.css";
 import Transaction from './pages/Transaction';
-import detectProvider from "@portkey/detect-provider";
-import { IPortkeyProvider, MethodsBase } from "@portkey/provider-types";
-import { useEffect, useState } from "react";
+
+import "./App.css";
+
 
 function App() {
   const auth = useAuth();
@@ -26,7 +30,7 @@ function App() {
     if (!provider) init();
   }, [provider]);
 
-  if (!provider) return <>Provider not found.</>;
+  if (!provider) return <>Loading...</>;
 
   return (
     <div>
@@ -49,14 +53,13 @@ function App() {
             <Route
               path="/transactionhistory"
               element={
-                //auth.isAuthenticated ? 
-                <TransactionHistory provider={provider}/>
-                //: <TransactionHistory />
+                auth.isAuthenticated ? <TransactionHistory provider={provider} /> : <Navigate to="/" />
               }
             />
-            console.log(auth.isAuthenticated);
+
             <Route path="/transactionforms" element={<Transaction provider={provider}/>} />
           </Routes>
+          <Footer />
         </Router>
       </AuthProvider>
     </div>
