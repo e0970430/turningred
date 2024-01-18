@@ -49,7 +49,9 @@ function App() {
             <Route
               path="/transactionhistory"
               element={
-                auth.isAuthenticated ? <TransactionHistory /> : <TransactionHistory />
+                //auth.isAuthenticated ? 
+                <TransactionHistory provider={provider}/>
+                //: <TransactionHistory />
               }
             />
             console.log(auth.isAuthenticated);
