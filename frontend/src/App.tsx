@@ -53,7 +53,7 @@ function App() {
             <Route
               path="/transactionhistory"
               element={
-                auth.isAuthenticated ? <TransactionHistory /> : <Navigate to="/" />
+                auth.isAuthenticated ? <TransactionHistory provider={provider} /> : <Navigate to="/" />
               }
             />
 
