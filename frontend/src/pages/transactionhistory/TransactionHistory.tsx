@@ -17,7 +17,7 @@ function TransactionHistory({ provider }: { provider: IPortkeyProvider | null })
     const [transactionID, setTransactionID] = useState("");
     const [initialized, setInitialized] = useState(false);
     const [result, setResult] = useState<TransactionData>();
-
+    
     const retrieveTxn = async () => {
         try {
         const accounts = await provider?.request({
