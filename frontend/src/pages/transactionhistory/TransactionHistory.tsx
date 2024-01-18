@@ -1,7 +1,7 @@
 import { IPortkeyProvider, MethodsBase} from "@portkey/provider-types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './TransactionHistory.module.css';
-import {Link} from "react-router-dom";
+// import { Link } from "react-router-dom";
 import useSmartContract from "../../useSmartContract";
 
 interface TransactionData {
@@ -15,9 +15,9 @@ interface TransactionData {
 function TransactionHistory({ provider }: { provider: IPortkeyProvider | null }) {
     const transactionContract = useSmartContract(provider);
     const [transactionID, setTransactionID] = useState("");
-    const [initialized, setInitialized] = useState(false);
+    // const [initialized, setInitialized] = useState(false);
     const [result, setResult] = useState<TransactionData>();
-
+    
     const retrieveTxn = async () => {
         try {
         const accounts = await provider?.request({

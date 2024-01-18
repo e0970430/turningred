@@ -1,8 +1,6 @@
 import { IPortkeyProvider, MethodsBase} from "@portkey/provider-types";
 import { useEffect, useState } from "react";
-import React from 'react';
 import './Transaction.css';
-import Landing from './Landing';
 import {Link} from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext"; 
 
@@ -14,7 +12,45 @@ function Transaction({ provider }: { provider: IPortkeyProvider | null }) {
     const [transactionAmount, setTransactionAmount] = useState("");
     const [remarks, setRemarks] = useState("");
 
+    // form validation
+    const [formErrors, setFormErrors] = useState([]);
+
+    const validateForm () => {
+        const errors = [];
+
+        if (!senderID.trim()) {
+            errors.push("Sender ID field needs to be filled in.");
+        }
+        if (!itemID.trim()) {
+            errors.push("Item ID field needs to be filled in.");
+        }
+        if (!rfidTag.trim()) {
+            errors.push("RFID Tag field needs to be filled in.");
+        }
+        if (!quantity.trim()) {
+            errors.push("Quantity field needs to be filled in.");
+        }
+        if (!transactionAmount.trim()) {
+            errors.push("Transaction Amount field needs to be filled in.");
+        }
+
+        return errors;
+    }
+
     const sendTransaction = async () => {
+        setFormErrors([]);
+        const errors = validateForm();
+
+        if (errors && errors.length > 0) {
+            setFormErrors(errors);
+            return;
+        }
+
+        if (errors && errors.length > 0) {
+            setFormErrors(errors);
+            return;
+        }
+
         try {
             const accounts = await provider?.request({
                 method: MethodsBase.ACCOUNTS,
@@ -43,6 +79,11 @@ function Transaction({ provider }: { provider: IPortkeyProvider | null }) {
 
             if(!accounts) throw new Error('transaction failed!');
             console.log('transaction success! transaction id:', accounts);
+
+            alert(
+                `Successfully recorded!\n Transaction ID: ${accounts}\nTotal Amount: $${transactionAmount}`
+              );
+            setFormErrors([]);
             } catch (e) {
             // An error will be thrown if the user denies the permission request, or other issues.
             console.log('transaction failed!', e);
@@ -54,6 +95,13 @@ function Transaction({ provider }: { provider: IPortkeyProvider | null }) {
 
     return (
         <div className="form">
+            {formErrors && formErrors.length > 0 && (
+        <div style={{ color: "red" }}>
+          {formErrors.map((error, index) => (
+            <p key={index}>{error}</p>
+          ))}
+        </div>
+      )}
             <div className="field-group">
                 <h2 className="field-label">Sender ID</h2>
                 <input type="text" id="sender-id" placeholder='' onChange={(e) => setSenderID(e.target.value)} value={senderID}/>
