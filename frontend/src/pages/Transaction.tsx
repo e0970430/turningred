@@ -80,8 +80,8 @@
                 }
                 // 2. if a transaction has not been created yet, it will create a transaction
                 await transactionContract?.callSendMethod("CreateSCTransaction", account, {
-                  recipient: "ELF_joeN4RkRby7eReEKHwUhiAYEE6UYMtjv5BfYfo86UWwkJuMHi_tDVW",
-                  item: "book",
+                  recipient: senderID,
+                  item: itemID,
                   quantity: quantity,
                   amount: transactionAmount,
                 });
