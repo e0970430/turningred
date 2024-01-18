@@ -3,8 +3,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 75px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .error-message {
@@ -13,10 +14,18 @@
     margin-top: 10px;
 }
 
+.field-group-pair {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
 .field-group {
+    flex: 1;    
     display: flex;
     flex-direction: column;
-    margin: 10px 0;
+    margin: 10px;
 }
 
 .field-label {
@@ -37,7 +46,7 @@
 }
 
 .button {
-    background-color: #f1b6ac;
+    background-color: #623c3c;
     color: #fff;
     font-size: 18px;
     padding: 10px 20px;
@@ -53,7 +62,7 @@
 }
 
 .button:hover:enabled {
-    background-color: #e19287;
+    background-color: #976060;
 }
 
 /* Clear floats after the columns */
@@ -61,4 +70,15 @@
     content: "";
     display: table;
     clear: both;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .form {
+        flex-direction: column; /* Change to a single column layout on smaller screens */
+    }
+
+    .field-group {
+        width: 100%; /* Full width for each field group in single column layout */
+    }
 }

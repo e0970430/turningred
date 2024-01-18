@@ -1,8 +1,9 @@
     import { IPortkeyProvider, MethodsBase} from "@portkey/provider-types";
-    import { useEffect, useState } from "react";
+    import { useState } from "react";
     import './Transaction.css';
-    import { Link } from "react-router-dom";
+    // import { Link } from "react-router-dom";
     import useSmartContract from "../useSmartContract";
+    import Picture from "./transaction.png";
 
     interface TransactionData {
         sender: string;
@@ -89,6 +90,15 @@
                 );
                 setFormErrors([] as string[]);
                 setProcessing(false);
+
+                // reset fields
+                setSenderID("");
+                setItemID("");
+                setRfidTag("");
+                setQuantity("");
+                setTransactionAmount("");
+                setRemarks("");
+
                 // console.log(data);
               }
             } catch (error) {
@@ -109,18 +119,24 @@
                     </div>
                 )}
 
+                <div className="field-group-pair">
                     <div className="field-group">
                         <h2 className="field-label">Recipient ID</h2>
                         <input type="text" placeholder='' onChange={(e) => setSenderID(e.target.value)} value={senderID}/>
                     </div>
+                </div>
+                <div className="field-group-pair">
                     <div className="field-group">
                         <h2 className="field-label">Item ID</h2>
                         <input type="text" placeholder='' onChange={(e) => setItemID(e.target.value)} value={itemID}/>
                     </div>
+                
                     <div className="field-group">
                         <h2 className="field-label">RFID Tag No.</h2>
                         <input type="text" placeholder='' onChange={(e) => setRfidTag(e.target.value)} value={rfidTag}/>
                     </div>
+                </div>
+                <div className="field-group-pair">
                     <div className="field-group">
                         <h2 className="field-label">Quantity</h2>
                         <input type="number" min="0" placeholder='' onChange={(e) => setQuantity(e.target.value)} value={quantity}/>
@@ -129,23 +145,28 @@
                         <h2 className="field-label">Transaction Amount</h2>
                         <input type="number" min="0" placeholder='' onChange={(e) => setTransactionAmount(e.target.value)} value={transactionAmount}/>
                     </div>
+                </div>
+
+                <div className="field-group-pair">
                     <div className="field-group">
                         <h2 className="field-label">Remarks</h2>
                         <input type="text" placeholder='' onChange={(e) => setRemarks(e.target.value)} value={remarks}/>
                     </div>
+                </div>
 
                     <button
+                        class="button"
                         onClick={onClick}
                         disabled={processing} // Step 2
                         style={{
                             justifyContent: "center",
                             alignItems: "center",
-                            backgroundColor: processing ? "#c0c0c0" : "#f1b6ac", // Step 3
+                            backgroundColor: processing ? "#444444" : "#976060",
                             border: "none",
                             fontSize: 18,
-                            lineHeight: 1.5,
+                            lineHeight: 1,
                             display: "inline-block",
-                            cursor: processing ? "not-allowed" : "pointer", // Step 3
+                            cursor: processing ? "not-allowed" : "pointer",
                         }}
                         >
                         Send Transaction
